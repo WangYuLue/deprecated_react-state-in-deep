@@ -1,0 +1,103 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/eslint-recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "react-hooks"
+  ],
+  "rules": {
+    "semi": [
+      "error",
+      "always"
+    ],
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "jsx-quotes": [
+      "error",
+      "prefer-single"
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ],
+    "no-useless-escape": "off",
+    "array-callback-return": "error",
+    "class-methods-use-this": "off",
+    "default-case": "off",
+    "eqeqeq": "error",
+    "guard-for-in": "error",
+    "no-alert": "error",
+    "no-div-regex": "error",
+    "no-else-return": "error",
+    "no-extend-native": "error",
+    "no-var": "error",
+    "no-console": "off",
+    "no-empty": "error",
+    "no-unused-vars": "off",
+    "no-multiple-empty-lines": "error",
+    "no-unreachable": "error",
+    "no-param-reassign": "error",
+    "comma-dangle": "error",
+    // "no-duplicate-imports": "error",
+    "block-spacing": "error",
+    "prefer-const": "off",
+    "key-spacing": [
+      "error",
+      {
+        "beforeColon": false
+      }
+    ],
+    "comma-spacing": [
+      "error",
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    "object-curly-spacing": [
+      "error",
+      "always"
+    ],
+    "@typescript-eslint/no-unused-vars": [
+      "error"
+    ],
+    "@typescript-eslint/consistent-type-definitions": [
+      "error",
+      "interface"
+    ],
+    "@typescript-eslint/no-explicit-any": [
+      "error"
+    ],
+    "react/prop-types": "off",
+    "no-undef": "off",
+    "max-len": [
+      "error",
+      {
+        "code": 150
+      }
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error"
+  }
+}

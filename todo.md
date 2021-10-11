@@ -2,6 +2,8 @@
 
 ## 调研了解 数据不可变库
 
+- [] immer.js
+
 ## react 原生状态管理
 
 - [] context (class 写法 & hooks 写法)

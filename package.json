@@ -5,6 +5,23 @@
   "author": "wanger <1206180097@qq.com>",
   "license": "MIT",
   "dependencies": {
-    "immer": "^9.0.6"
+    "immer": "^9.0.6",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.27",
+    "@types/react-dom": "^17.0.9",
+    "@typescript-eslint/eslint-plugin": "4.6.0",
+    "@typescript-eslint/parser": "4.6.0",
+    "eslint": "6.8.0",
+    "eslint-plugin-react": "7.17.0",
+    "eslint-plugin-react-hooks": "2.5.0",
+    "parcel": "^1.12.4",
+    "typescript": "^4.4.3"
+  },
+  "__resolutions_tips__": "用于解决 parcel 更新到 1.12.4 带来的问题，相关链接：https://github.com/parcel-bundler/parcel/issues/5943#issuecomment-788928442",
+  "resolutions": {
+    "@babel/preset-env": "7.13.8"
   }
 }

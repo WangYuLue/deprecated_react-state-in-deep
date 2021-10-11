@@ -12,6 +12,14 @@
 - Jotai
 - rxjs
 
+## 例子启动方式
+
+使用 parcel 启动例子，例如：
+
+```bash
+yarn parcel examples/001-vanilla-react/demo01/index.html
+```
+
 ## 使用场景
 
 笔者会先确定状态管理一般的使用场景，然后用这些状态管理库一一实现这些使用场景，再从代码中了解它们的特点以及区别。
