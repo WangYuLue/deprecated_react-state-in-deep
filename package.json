@@ -1,0 +1,10 @@
+{
+  "name": "react-state-in-deep",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "wanger <1206180097@qq.com>",
+  "license": "MIT",
+  "dependencies": {
+    "immer": "^9.0.6"
+  }
+}
