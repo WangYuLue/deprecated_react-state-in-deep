@@ -6,9 +6,9 @@
 
 ## react 原生状态管理
 
-- [] context (class 写法 & hooks 写法)
+- [x] context
 - [] useContext, useReducer
-- [] memo 的作用
+- [] memo, useMemo 的作用
 
 ## redux
 
