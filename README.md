@@ -17,7 +17,7 @@
 使用 parcel 启动例子，例如：
 
 ```bash
-yarn parcel examples/001-vanilla-react/demo-01/index.html
+yarn parcel examples/01-vanilla-react/01-context/index.html
 ```
 
 ## 使用场景

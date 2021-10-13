@@ -1,6 +1,6 @@
 # 原生 React 状态管理
 
-## Context
+## Context & useContext
 
 在一个典型的 React 应用中，数据是通过 props 属性自上而下（由父及子）进行传递的，但此种用法对于某些类型的属性而言是极其繁琐的。
 
@@ -84,8 +84,8 @@ function Content() {
 
 ### 相关例子
 
-- demo-01
-- demo-02
+- 01-context
+- 02-useContext
 
 ### 拓展阅读
 
