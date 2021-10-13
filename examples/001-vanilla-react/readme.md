@@ -1,43 +1,92 @@
 # 原生 React 状态管理
 
-## demo01 - `context`
+## Context
 
-**使用原生 `context`，跨组建传递状态（class 类的写法）**
+在一个典型的 React 应用中，数据是通过 props 属性自上而下（由父及子）进行传递的，但此种用法对于某些类型的属性而言是极其繁琐的。
 
-使用到的 API: `React.createContext`
+Context 提供了一种在组件之间共享此类值的方式，而不必显式地通过组件树的逐层传递 props。
 
-### `context` 的缺陷
+### 使用到的 API
 
-代码被侵入，这会使得组件的复用性变差。
+- `React.createContext`
+- `Context.Provider`
+- `Context.Consumer`
+
+### 优缺点
+
+优点：不必显示的一层层传递组件
+缺点：使得组件的复用性变差
+
+### 其他情况
+
+#### 改变 context 里的值
+
+将函数放入 `BaseContext.Provider` 里，例如：
+
+```js
+class App extends React.Component {
+  state= {
+    color: 'balck'
+  }
+
+  setColor = (color: string) => {
+    this.setState({ color });
+  }
+  render() {
+    return (
+      <BaseContext.Provider value={{
+        color: this.state.color,
+        setColor: this.setColor
+      }}>
+        <Toolbar />
+      </BaseContext.Provider>
+    );
+  }
+}
+
+// Sub 是 Toolbar 的深层子组件
+const Sub = () => {
+  const context = useContext(BaseContext);
+  return (
+    <div>
+      <button onClick={()=>context.setColor('red')}>变红</button>
+    </div>
+  );
+}
+```
+
+#### 一个组件中需要使用多个 context
+
+使用多层 Consumer，例如：
+
+```js
+// 一个组件可能会消费多个 context
+function Content() {
+  return (
+    <ThemeContext.Consumer>
+      {theme => (
+        <UserContext.Consumer>
+          {user => (
+            <ProfilePage user={user} theme={theme} />
+          )}
+        </UserContext.Consumer>
+      )}
+    </ThemeContext.Consumer>
+  );
+}
+```
+
+详情参考文档 [docs - consuming-multiple-contexts](https://zh-hans.reactjs.org/docs/context.html#consuming-multiple-contexts)
 
 ### 相关文档
 
 - [react docs - Context](https://zh-hans.reactjs.org/docs/context.html)
 
-## demo02 - `useContext`
+### 相关例子
 
-**使用原生 `useContext`，跨组建传递状态（hooks 写法）**
+- demo-01
+- demo-02
 
-`useContext` 可以替代 class 写法中的 contextType;
+### 拓展阅读
 
-```js
-class Sub extends React.Component {
-  static contextType = AContext; 
-  render() {
-    return (
-      <div>context value: {JSON.stringify(this.context)}</div>
-    );
-  }
-}
-
-// to
-
-function Sub () {
-  const context = useContext(AContext);
-  return (
-    <div>hooks: context value: {JSON.stringify(context)}</div>
-  );
-}
-```
-
-## demo02 - `useContext`
+- [react issue: Preventing rerenders with React.memo and useContext hook](https://github.com/facebook/react/issues/15156)

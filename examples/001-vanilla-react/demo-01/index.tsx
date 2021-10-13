@@ -1,3 +1,12 @@
+/**
+ * @summary 使用 context 跨组建传递状态
+ * 
+ * @advantage 不必显示的一层层传递组件
+ * @disadvantage 使组件的复用性变差
+ * 
+ * @tips 1、类组件使用 contextType 指定 context；函数组件使用 useContext 指定 context;
+ */
+
 import * as React from 'react';
 import { render } from 'react-dom';
 
@@ -35,7 +44,7 @@ function Toolbar() {
 }
 
 class Sub extends React.Component {
-  // 指定 contextType 读取当前的 context。
+  // 需要指定当前使用那个 context。（ class 中用 contextType）
   static contextType = AContext; // 不可省略
   // React 会往上找到最近的 theme Provider，然后使用它的值。
   render() {

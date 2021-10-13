@@ -1,3 +1,12 @@
+/**
+ * @summary 使用 context 跨组建传递状态
+ * 
+ * @advantage 不必显示的一层层传递组件
+ * @disadvantage 使组件的复用性变差
+ * 
+ * @tips 1、类组件使用 contextType 指定 context；函数组件使用 useContext 指定 context;
+ */
+
 import * as React from 'react';
 import { render } from 'react-dom';
 

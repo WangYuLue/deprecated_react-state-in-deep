@@ -7,8 +7,10 @@
 ## react 原生状态管理
 
 - [x] context
-- [] useContext, useReducer
+- [x] useContext
+- [] useReducer
 - [] memo, useMemo 的作用
+- [] pureComponent 的作用
 
 ## redux
 
