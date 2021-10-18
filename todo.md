@@ -8,9 +8,7 @@
 
 - [x] context
 - [x] useContext
-- [] useReducer
-- [] memo, useMemo 的作用
-- [] pureComponent 的作用
+- [x] memo, useMemo, pureComponent 的作用
 
 ## redux
 

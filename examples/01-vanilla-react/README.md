@@ -90,3 +90,17 @@ function Content() {
 ### 拓展阅读
 
 - [react issue: Preventing rerenders with React.memo and useContext hook](https://github.com/facebook/react/issues/15156)
+
+## memo, useMemo, pureComponent 的作用
+
+作用：**通过浅层对比，来阻止不必要的渲染**
+
+1. 父组件重新 render 时，也会尝试重新 render 子组件；
+2. 如果子组件没有 memo，会跟着父组件 render；
+3. 如果子组件有 memo，且 props 浅对比没有变化，则不会跟着父组件 render；
+4. JSX 中的匿名函数在每次 父组件 render 时重新生成，这是即使 memo，浅对比也会不一样，这时候 子组件也会重新 render；
+5. 由于 memo 是浅对比，所以当一个对象作为 prop 传入子组件时，如果对象的引用没有变化，即使父组件 render,也不会触发 子组件render；
+
+### 相关例子
+
+- 03-memo
