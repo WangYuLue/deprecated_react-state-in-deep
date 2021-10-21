@@ -2,7 +2,7 @@
 
 ## 调研了解 数据不可变库
 
-- [] immer.js
+- [x] immer.js
 
 ## react 原生状态管理
 
